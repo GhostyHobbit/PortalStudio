@@ -16,6 +16,7 @@ const Resources = {
     // music
     // MainThemeMusic: new Sound('music/CLE_4_Main_Theme.mp3'),
     // LevelOneMusic: new Sound('music/CLE_4_Level_1.mp3'),
+    //levelTwoMusic: new Sound('music/CLE_4_level_2.mp3'),
     //LevelFourGoodEndingMusic: new Sound('music/CLE_4_Level_4_good_ending.mp3')
 }
 const ResourceLoader = new Loader()
