@@ -7,7 +7,7 @@ import { SceneTransition } from "../sceneTransition.js"
 import { Dialogue } from '../dialogue.js'
 import { Door } from "./door.js"
 
-export class LOneExtraScene extends Scene {
+export class LOneExtraSceneBad extends Scene {
 
     dialogueText = ['cracked', 'chickens', 'definitely', 'say', 'wac']
     
@@ -22,7 +22,7 @@ export class LOneExtraScene extends Scene {
         console.log(this.engine)
         const levelonescreenone = new Actor()
         levelonescreenone.pos = new Vector(640, 360)
-        levelonescreenone.graphics.use(Resources.L1Extra.toSprite())
+        levelonescreenone.graphics.use(Resources.L1ExtraBad.toSprite())
         this.add(levelonescreenone)
 
         const invisfloor = new InvisibleFloor()
@@ -31,7 +31,7 @@ export class LOneExtraScene extends Scene {
 
         const doortwo = new Door()
         doortwo.graphics.use(Resources.L1Door.toSprite())
-        doortwo.pos = new Vector(457,440)
+        doortwo.pos = new Vector(140,440)
         this.add(doortwo)
 
         const alchemist = new Alchemist()
@@ -42,8 +42,7 @@ export class LOneExtraScene extends Scene {
         // Resources.LevelOneMusic.play(0.8);
 
         const letter = new Letter()
-        letter.pos = new Vector(790 ,530)
-        letter.SpriteActive = false
+        letter.pos = new Vector(1100 ,600)
         this.add(letter)
     }
     onDeactivate() {

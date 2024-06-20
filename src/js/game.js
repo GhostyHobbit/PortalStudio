@@ -11,6 +11,7 @@ import { Intro } from './intro.js'
 import { LevelFour } from './levelfour.js';
 import { LOneSceneTwo } from './levelone/l1scenetwo.js';
 import { LOneExtraScene } from './levelone/extrascene.js';
+import { LOneExtraSceneBad } from './levelone/extrascenebad.js';
 
 export class Game extends Engine {
 
@@ -34,7 +35,8 @@ export class Game extends Engine {
         this.add('levelfour', new LevelFour())
         this.add('l1scenetwo', new LOneSceneTwo())
         this.add('l1extra', new LOneExtraScene())
-        this.goToScene('intro')
+        this.add('l1extrabad', new LOneExtraSceneBad())
+        this.goToScene('l1extrabad')
     }
 }
 

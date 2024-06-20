@@ -36,6 +36,10 @@ export class LevelOne extends Scene {
         alchemist.graphics.use(Resources.Alchemist.toSprite())
         this.add(alchemist)
         // Resources.LevelOneMusic.play(0.8);
+
+        const scenetrans = new SceneTransition()
+        scenetrans.pos = new Vector(3840, 450)
+        this.add(scenetrans)
     }
     onDeactivate() {
         this.clear()
@@ -43,5 +47,9 @@ export class LevelOne extends Scene {
 
     changeRoom() {
         this.engine.goToScene('l1scenetwo')
+    }
+
+    changeScene() {
+        this.engine.goToScene('l1extrabad')
     }
 }
