@@ -12,13 +12,15 @@ const Resources = {
     Dialogue: new ImageSource('images/dialogue.png'),
     L1Door: new ImageSource('images/levelone/door.png'),
     LevelFour: new ImageSource('images/LevelfourGood.png'),
-    Floor: new ImageSource('images/floorbar.png')
+    Floor: new ImageSource('images/floorbar.png'),
     // music
-    // MainThemeMusic: new Sound('music/CLE_4_Main_Theme.mp3'),
-    // LevelOneMusic: new Sound('music/CLE_4_Level_1.mp3'),
-    //levelTwoMusic: new Sound('music/CLE_4_level_2.mp3'),
-    //LevelFourGoodEndingMusic: new Sound('music/CLE_4_Level_4_good_ending.mp3'),
-    //LevelFourBadEndingMusic: new Sound('music/CLE_4_Level_4_Bad_ending.mp3')
+    //MainThemeMusic: new Sound('sound/music/CLE_4_Main_Theme.mp3'),
+    //LevelOneMusic: new Sound('sound/music/CLE_4_Level_1.mp3'),
+    //LevelTwoMusic: new Sound('sound/music/CLE_4_level_2.mp3'),
+    //LevelFourGoodEndingMusic: new Sound('sound/music/CLE_4_Level_4_good_ending.mp3'),
+    //LevelFourBadEndingMusic: new Sound('sound/music/CLE_4_Level_4_Bad_ending.mp3'),
+    // sfx
+    //OpeningLetterSFX: new Sound('sound/sfx/opening_letter.mp3')
 }
 const ResourceLoader = new Loader()
 for (let res of Object.values(Resources)) {
