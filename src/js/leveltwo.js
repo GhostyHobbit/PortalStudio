@@ -3,7 +3,7 @@ import { Resources } from './resources.js'
 import { Alchemist } from './alchemist.js'
 import { Letter } from './letter.js'
 import { InvisibleFloor } from './invisiblefloor.js'
-import { Door } from './door.js'
+import { Door } from './levelone/door.js'
 
 export class LevelTwo extends Scene {
     onInitialize(engine) {

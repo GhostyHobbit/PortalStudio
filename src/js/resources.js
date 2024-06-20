@@ -7,6 +7,7 @@ const Resources = {
     Letter: new ImageSource('images/letter.png'),
     SceneTransition: new ImageSource('images/sparklybar.png'),
     LevelOneScreenOne: new ImageSource('images/levelone/sceneone.png'),
+    LevelOneSceneTwo: new ImageSource('images/levelone/levelonescenetwo.png'),
     levelTwoPlaceholder: new ImageSource('images/leveltwo/level_2_placeholder.png'),
     Intro: new ImageSource('images/introscene.png'),
     Dialogue: new ImageSource('images/dialogue.png'),
