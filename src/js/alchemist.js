@@ -13,6 +13,7 @@ export class Alchemist extends Actor {
     dialogue = new Dialogue()
     levelEnded = false
     dialogueText = ['cracked', 'chickens', 'definitely', 'say', 'wac']
+    x = 3780
 
     constructor() {
         super({width: Resources.Alchemist.width, height: Resources.Alchemist.height})
@@ -25,7 +26,7 @@ export class Alchemist extends Actor {
         this.on('precollision', (event) => this.interact(event))
 
         this.scene.camera.strategy.lockToActor(this)
-        this.scene.camera.strategy.limitCameraBounds(new BoundingBox(0, 0, 3780, 720))
+        this.scene.camera.strategy.limitCameraBounds(new BoundingBox(0, 0, this.x, 720))
         this.on('collisionstart', (event) => this.sceneTransition(event))
     }
 
