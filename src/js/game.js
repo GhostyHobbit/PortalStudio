@@ -30,7 +30,7 @@ export class Game extends Engine {
         this.add('levelone', new LevelOne())
         this.add('leveltwo', new LevelTwo())
         this.add('levelfour', new LevelFour())
-        this.goToScene('intro')
+        this.goToScene('levelone')
     }
 }
 

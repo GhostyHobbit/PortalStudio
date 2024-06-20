@@ -1,9 +1,10 @@
-import { Actor, Scene, Vector, Input } from "excalibur"
+import { Actor, Scene, Vector, Input, Keys } from "excalibur"
 import { Resources } from './resources'
 import { Alchemist } from './alchemist.js'
 import { Letter } from './letter.js'
 import { InvisibleFloor } from './invisiblefloor.js'
 import { SceneTransition } from "./sceneTransition.js"
+import { Door } from "./door.js"
 
 export class LevelOne extends Scene {
 
@@ -25,7 +26,7 @@ export class LevelOne extends Scene {
         invisfloor.pos = new Vector(1900, 700)
         this.add(invisfloor)
 
-        const door = new SceneTransition()
+        const door = new Door()
         door.graphics.use(Resources.L1Door.toSprite())
         door.pos = new Vector(2720,437)
         this.add(door)
@@ -39,10 +40,8 @@ export class LevelOne extends Scene {
     onDeactivate() {
         this.clear()
     }
+
     changeScene() {
-        // this.engine.goToScene('levelone')
-        if (engine.input.keyboard.wasPressed(Input.Keys.E)) {
-            console.log('wac')
-        }
+        this.engine.goToScene('levelone')
     }
 }
