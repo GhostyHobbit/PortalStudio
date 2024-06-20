@@ -41,7 +41,7 @@ export class LevelOne extends Scene {
         this.clear()
     }
 
-    changeScene() {
+    changeRoom() {
         this.engine.goToScene('l1scenetwo')
     }
 }

@@ -20,7 +20,7 @@ export class Door extends Actor {
   opendoor(event){
     if (event.other instanceof Alchemist) {
         if (this.scene.engine.input.keyboard.wasPressed(Keys.E)) {
-            this.scene.changeScene()
+            this.scene.changeRoom()
             }
         }
     }
