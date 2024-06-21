@@ -36,14 +36,12 @@ export class Intro extends Scene {
         this.add(alchemist)
 
         const scene = new SceneTransition()
+        scene.pos = new Vector(3740, 400)
         this.add(scene)
 
         const floor = new Floor()
         floor.pos = new Vector(2000, 890)
         this.add(floor)
-        
-        const scenetrans = new SceneTransition()
-        this.add(scenetrans)
 
         // Resources.MainThemeMusic.play(0.8);
     }
