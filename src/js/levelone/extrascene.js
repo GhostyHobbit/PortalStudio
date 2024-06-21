@@ -9,7 +9,9 @@ import { Door } from "./door.js"
 
 export class LOneExtraScene extends Scene {
 
-    dialogueText = ['cracked', 'chickens', 'definitely', 'say', 'wac']
+    dialogueText = [
+        'Placeholder' 
+    ]
     
     constructor() {
         super()
@@ -55,9 +57,6 @@ export class LOneExtraScene extends Scene {
     }
 
     sceneDialogue(number) {
-        this.actors[6].dialogueFlow(this.dialogueText[number])
-    }
-    LetterGood(number) {
         this.actors[6].dialogueFlow(this.dialogueText[number])
     }
 
