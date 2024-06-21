@@ -12,6 +12,8 @@ import { LevelFour } from './levelfour.js';
 
 export class Game extends Engine {
 
+    mygamepad
+
     constructor() {
         super({
             width: 1280,
@@ -31,6 +33,12 @@ export class Game extends Engine {
         this.add('leveltwo', new LevelTwo())
         this.add('levelfour', new LevelFour())
         this.goToScene('intro')
+
+        this.input.gamepads.enabled = true
+        this.input.gamepads.on('connect', (connectevent) => {
+            console.log("gamepad detected")
+            this.mygamepad = connectevent.gamepad
+        })
     }
 }
 
