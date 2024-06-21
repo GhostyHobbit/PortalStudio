@@ -2,7 +2,7 @@ import { Actor, Engine, Vector, Input } from "excalibur"
 import { Resources, ResourceLoader } from './resources.js'
 
 export class Letter extends Actor {
-
+    SpriteActive = true
     letterText
 
     constructor() {
@@ -10,6 +10,8 @@ export class Letter extends Actor {
     }
 
     onInitialize() {
-        this.graphics.use(Resources.Letter.toSprite())
+        if (this.SpriteActive === true) {
+            this.graphics.use(Resources.Letter.toSprite())
+        }
     }
 }

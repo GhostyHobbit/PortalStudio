@@ -12,8 +12,8 @@ export class Dialogue extends Actor {
         pos: new Vector (-550, -100),
         width: 1000,
         font: new Font({
-            family: 'impact',
-            size: 24,
+            family: 'copperplate gothic',
+            size: 30,
             unit: FontUnit.Px
         })
     })
@@ -30,7 +30,7 @@ export class Dialogue extends Actor {
      }
 
      onPostUpdate() {
-        this.pos = new Vector (this.scene.actors[2].pos.x, 200)
+        // this.pos = new Vector (this.scene.actors[2].pos.x, 200)
      }
      dialogueFlow(text) {
         this.label.text = text

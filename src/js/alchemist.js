@@ -4,6 +4,7 @@ import { Resources, ResourceLoader } from './resources.js'
 import { SceneTransition } from "./sceneTransition.js"
 import { Dialogue } from "./dialogue.js"
 import { Letter } from "./letter.js"
+import { masterAlchemist } from "./masteralchemist.js"
 
 export class Alchemist extends Actor {
 
@@ -13,6 +14,7 @@ export class Alchemist extends Actor {
     dialogue = new Dialogue()
     levelEnded = false
     dialogueText = ['cracked', 'chickens', 'definitely', 'say', 'wac']
+    x = 3780
 
     constructor() {
         super({width: Resources.Alchemist.width, height: Resources.Alchemist.height})
@@ -25,7 +27,7 @@ export class Alchemist extends Actor {
         this.on('precollision', (event) => this.interact(event))
 
         this.scene.camera.strategy.lockToActor(this)
-        this.scene.camera.strategy.limitCameraBounds(new BoundingBox(0, 0, 3780, 720))
+        this.scene.camera.strategy.limitCameraBounds(new BoundingBox(0, 0, this.x, 720))
         this.on('collisionstart', (event) => this.sceneTransition(event))
 
         console.log(this.scene.engine.mygamepad)
@@ -56,21 +58,18 @@ export class Alchemist extends Actor {
     }
 
     interact(event) {
-        if(event.other instanceof Letter) {
-            // this.scene.engine.mygamepad.on('button', (event) => this.controllerInteract (event)) 
-
+        if(event.other instanceof Letter || event.other instanceof masterAlchemist) {
             if (this.game.input.keyboard.wasPressed(Input.Keys.E) || this.scene.engine.mygamepad.wasButtonReleased(Buttons.Face1)) {
                 if (this.existingDialogue === false) {
                     this.existingDialogue = true
+                    this.dialogue.pos = new Vector(this.pos.x, 200)
                     this.scene.add(this.dialogue)
                     // this.scene.actors[6].dialogueFlow(`I am your Master Alchemist. You, my apprentice, have to find your way through these tests. These are tests of faith, \ncreativity and exploration. Every choice you make will influence your future.`)
                     this.scene.sceneDialogue(0)
                 } else if (this.existingDialogue === true) {
                     this.dialogueCount++
-                    console.log(this.dialogueCount)
                     if (this.dialogueCount >= this.scene.dialogueText.length) {
-                        console.log(this.scene.actors)
-                        this.scene.actors[6].kill()
+                        this.scene.actors[this.scene.actors.length - 2].kill()
                         this.existingDialogue = false
                         this.dialogueCount = 0
                     } else {
