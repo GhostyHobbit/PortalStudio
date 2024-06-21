@@ -8,7 +8,10 @@ import { SceneTransition } from "./sceneTransition.js"
 
 export class Intro extends Scene {
 
-    dialogueText = ['cracked', 'chickens', 'definitely', 'say', 'wac']
+    dialogueText = [
+        'Dear Little Alchemist, I am the Master Alchemist. You may not \nremember me, but I sent you on this mission. You will have to go \nthrough various tests. These will test your faith, creativity and \nexploration.', 
+        'Every choice you make will influence your future. Learn, \nLittle Alchemist, learn and the world will be at your feet. This is a \none way ticket, choose wisely. \n\n-The Master Alchemist', 
+    ]
 
     constructor() {
         super()
@@ -29,7 +32,7 @@ export class Intro extends Scene {
 
         const alchemist = new Alchemist()
         alchemist.graphics.use(Resources.AlchemistLamp.toSprite())
-        alchemist.pos = new Vector(1000, 530)
+        alchemist.pos = new Vector(1000, 500)
         this.add(alchemist)
 
         const scene = new SceneTransition()

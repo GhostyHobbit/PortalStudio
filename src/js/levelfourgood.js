@@ -7,7 +7,10 @@ import { masterAlchemist } from "./masteralchemist.js"
 
 export class LevelFourGood extends Scene {
 
-    dialogueText = ['cracked', 'chickens', 'definitely', 'say', 'wac']
+    dialogueText = [
+        'You have made it home! So good to see you, Little Alchemist. Did you \nlook out into the world? It’s beautiful out there and it’s you who \nmade it happen. ', 
+        'You finished your tests splendidly. The world is yours. If you treat \nit kindly you will find you get kindness in return. \n\nI am proud of you.', 
+    ]
     
     onInitialize(engine) {
 

@@ -58,9 +58,7 @@ export class Alchemist extends Actor {
                     this.scene.sceneDialogue(0)
                 } else if (this.existingDialogue === true) {
                     this.dialogueCount++
-                    console.log(this.dialogueCount)
                     if (this.dialogueCount >= this.scene.dialogueText.length) {
-                        console.log(this.scene.actors)
                         this.scene.actors[this.scene.actors.length - 2].kill()
                         this.existingDialogue = false
                         this.dialogueCount = 0
