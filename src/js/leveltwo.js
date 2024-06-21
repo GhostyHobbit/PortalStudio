@@ -5,6 +5,7 @@ import { Letter } from './letter.js'
 import { InvisibleFloor } from './invisiblefloor.js'
 import { InvisibleWall } from "./invisiblewall.js"
 import { Door } from './levelone/door.js'
+import { SceneTransition } from "./sceneTransition.js"
 
 export class LevelTwo extends Scene {
     onInitialize(engine) {
@@ -17,8 +18,16 @@ export class LevelTwo extends Scene {
         leveltwoscreen.graphics.use(Resources.levelTwo.toSprite())
         this.add(leveltwoscreen)
 
+        const scene = new SceneTransition()
+        scene.pos = new Vector(3840, 400)
+        this.add(scene)
+
+        const scene2 = new SceneTransition()
+        scene2.pos = new Vector(-80, 400)
+        this.add(scene2)
+
         const invisfloor = new InvisibleFloor()
-        invisfloor.pos = new Vector(1800, 640)
+        invisfloor.pos = new Vector(1820, 640)
         this.add(invisfloor)
 
         const inviswall = new InvisibleWall()
@@ -40,5 +49,8 @@ export class LevelTwo extends Scene {
     }
     onDeactivate() {
         this.clear()
+    }
+    changeScene() {
+        this.engine.goToScene('intro')
     }
 }
