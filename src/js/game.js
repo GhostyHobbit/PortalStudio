@@ -13,6 +13,7 @@ import { LOneSceneTwo } from './levelone/l1scenetwo.js';
 import { LOneExtraScene } from './levelone/extrascene.js';
 import { LOneExtraSceneBad } from './levelone/extrascenebad.js';
 import { LevelFourBad } from './levelfourbad.js';
+import { LevelThree } from './levelthree.js';
 
 export class Game extends Engine {
 
@@ -35,12 +36,13 @@ export class Game extends Engine {
         this.add('intro', new Intro())
         this.add('levelone', new LevelOne())
         this.add('leveltwo', new LevelTwo())
+        this.add('levelthree', new LevelThree())
         this.add('levelfourgood', new LevelFourGood())
         this.add('levelfourbad', new LevelFourBad())
         this.add('l1scenetwo', new LOneSceneTwo())
         this.add('l1extra', new LOneExtraScene())
         this.add('l1extrabad', new LOneExtraSceneBad())
-        this.goToScene('intro')
+        this.goToScene('levelthree')
 
         this.input.gamepads.enabled = true
         this.input.gamepads.on('connect', (connectevent) => {

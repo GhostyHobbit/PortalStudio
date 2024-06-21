@@ -12,7 +12,7 @@ export class Dialogue extends Actor {
         pos: new Vector (-550, -100),
         width: 1000,
         font: new Font({
-            family: 'copperplate gothic',
+            family: 'comic sans',
             size: 30,
             unit: FontUnit.Px
         })

@@ -59,7 +59,14 @@ export class Alchemist extends Actor {
 
     interact(event) {
         if(event.other instanceof Letter || event.other instanceof masterAlchemist) {
-            if (this.game.input.keyboard.wasPressed(Input.Keys.E) || this.scene.engine.mygamepad.wasButtonReleased(Buttons.Face1)) {
+            let keyCommand
+            if (this.scene.engine.mygamepad) {
+                keyCommand = this.scene.engine.mygamepad.wasButtonReleased(Buttons.Face1)
+            } else if (!this.scene.engine.mygamepad) {
+                keyCommand = this.game.input.keyboard.wasPressed(Input.Keys.E)
+            }
+            
+            if (keyCommand) {
                 if (this.existingDialogue === false) {
                     this.existingDialogue = true
                     this.dialogue.pos = new Vector(this.pos.x, 200)
