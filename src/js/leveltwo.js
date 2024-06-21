@@ -3,6 +3,7 @@ import { Resources } from './resources.js'
 import { Alchemist } from './alchemist.js'
 import { Letter } from './letter.js'
 import { InvisibleFloor } from './invisiblefloor.js'
+import { InvisibleWall } from "./invisiblewall.js"
 import { Door } from './levelone/door.js'
 
 export class LevelTwo extends Scene {
@@ -20,6 +21,10 @@ export class LevelTwo extends Scene {
         invisfloor.pos = new Vector(1800, 640)
         this.add(invisfloor)
 
+        const inviswall = new InvisibleWall()
+        inviswall.pos = new Vector(1860, /*440*/40)
+        this.add(inviswall)
+
         const letter = new Letter()
         letter.pos = new Vector(580, 460)
         this.add(letter)
@@ -29,7 +34,7 @@ export class LevelTwo extends Scene {
         this.add(letter2)
 
         const alchemist = new Alchemist()
-        alchemist.pos = new Vector(1900, 440)
+        alchemist.pos = new Vector(2100, 440)
         alchemist.graphics.use(Resources.Alchemist.toSprite())
         this.add(alchemist)
     }
