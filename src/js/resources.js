@@ -4,6 +4,8 @@ const Resources = {
     // art
     Alchemist: new ImageSource('images/alchemistwolamp.png'),
     AlchemistLamp: new ImageSource('images/alchemistwlamp.png'),
+    MasterBack: new ImageSource('images/masterback.png'),
+    MasterTurned: new ImageSource('images/masterturned.png'),
     Letter: new ImageSource('images/letter.png'),
     SceneTransition: new ImageSource('images/sparklybar.png'),
     LevelOneScreenOne: new ImageSource('images/levelone/sceneone.png'),
@@ -16,6 +18,8 @@ const Resources = {
     Dialogue: new ImageSource('images/dialogue.png'),
     L1Door: new ImageSource('images/levelone/door.png'),
     LevelFour: new ImageSource('images/LevelfourGood.png'),
+    LevelFourBad: new ImageSource('images/levelfourbad.png'),
+    Ronk: new ImageSource('images/ronk.png'),
     Floor: new ImageSource('images/floorbar.png'),
     // music
     //MainThemeMusic: new Sound('sound/music/CLE_4_Main_Theme.mp3'),

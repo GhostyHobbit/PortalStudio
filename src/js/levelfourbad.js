@@ -3,9 +3,10 @@ import { Resources } from './resources.js'
 import { Alchemist } from './alchemist.js'
 import { Letter } from './letter.js'
 import { Floor } from './floors.js'
+import { InvisibleFloor } from './invisiblefloor.js'
 import { masterAlchemist } from "./masteralchemist.js"
 
-export class LevelFourGood extends Scene {
+export class LevelFourBad extends Scene {
 
     dialogueText = ['cracked', 'chickens', 'definitely', 'say', 'wac']
     
@@ -14,29 +15,37 @@ export class LevelFourGood extends Scene {
     }
     onActivate(ctx) {
         const levelfour = new Actor()
-        levelfour.pos = new Vector(1890, 360)
-        levelfour.graphics.use(Resources.LevelFour.toSprite())
+        levelfour.pos = new Vector(2600, 360)
+        levelfour.graphics.use(Resources.LevelFourBad.toSprite())
         this.add(levelfour)
 
-        const floor = new Floor()
-        floor.pos = new Vector(2000, 900)
-        this.add(floor)
+        const invisfloor = new InvisibleFloor()
+        invisfloor.pos = new Vector(2600, 750)
+        this.add(invisfloor)
 
         const master = new masterAlchemist()
-        master.pos = new Vector(2500, 550)
+        master.pos = new Vector(1900, 550)
         master.graphics.use(Resources.MasterBack.toSprite())
-        master.graphics.flipHorizontal = true
+        master.graphics.flipHorizontal = false
         this.add(master)
 
         const alchemist = new Alchemist()
-        alchemist.pos = new Vector(200, 600)
+        alchemist.pos = new Vector(5000, 600)
+        alchemist.x = 5200
         alchemist.graphics.use(Resources.Alchemist.toSprite())
+        alchemist.graphics.flipHorizontal = true 
         this.add(alchemist)
+
+        const ronk = new Actor()
+        ronk.graphics.use(Resources.Ronk.toSprite())
+        ronk.pos = new Vector(2350, 360)
+        this.add(ronk)
     }
     onDeactivate() {
         this.clear()
     }
     sceneDialogue(number) {
-        this.actors[4].dialogueFlow(this.dialogueText[number])
+        // console.log(this.actors)
+        this.actors[5].dialogueFlow(this.dialogueText[number])
     }
 }
