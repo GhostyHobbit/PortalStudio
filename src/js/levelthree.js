@@ -9,7 +9,9 @@ import { TriggerBox } from "./triggerbox.js"
 export class LevelThree extends Scene {
 
     dialogueText = [
-        'After 300 years and 2 apocalyptic events humanity is returning to earth again. After seeing the dangerous but beautifull new ecosystems they are now standing before a choice. Go back to what they know and rebuild from the ruins of the cities that were, or let nature flourish and live in harmony with the world.'
+        'After 300 years and 2 apocalyptic events humanity is returning to \nearth again. After seeing the dangerous but beautifull new \necosystems they are now standing before a choice.',
+        'Go back to what they know and rebuild from the ruins of the cities \nthat were, or let nature flourish and live in harmony with \nthe world.',
+        'You, viewer, have learned from your journeys. Help the humans in \nthis choice and create the future.'
     ]
 
     onActivate(ctx) {
