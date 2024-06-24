@@ -20,7 +20,7 @@ export class LevelThree extends Scene {
         this.add(levelthree)
 
         const floor = new Floor()
-        floor.pos = new Vector(2000, 900)
+        floor.pos = new Vector(2000, 850)
         this.add(floor)
 
         const invisTrigger = new TriggerBox()
@@ -38,7 +38,7 @@ export class LevelThree extends Scene {
         this.add(goodScene)
 
         const alchemist = new Alchemist()
-        alchemist.pos = new Vector(200, 600)
+        alchemist.pos = new Vector(200, 550)
         alchemist.graphics.use(Resources.Alchemist.toSprite())
         alchemist.x = 2560
         this.add(alchemist)

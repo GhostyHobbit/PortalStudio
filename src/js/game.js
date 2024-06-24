@@ -1,5 +1,5 @@
 import '../css/style.css'
-import { Actor, Engine, Vector, Camera, ScreenElement, DisplayMode, Sound, SolverStrategy } from "excalibur"
+import { Actor, Engine, Vector, Camera, ScreenElement, DisplayMode, Sound, SolverStrategy, Buttons } from "excalibur"
 import { Resources, ResourceLoader } from './resources.js'
 import { Label, FontUnit, Font} from "excalibur";
 import { Alchemist } from './alchemist.js'  
@@ -44,7 +44,7 @@ export class Game extends Engine {
         this.add('l1scenetwo', new LOneSceneTwo())
         this.add('l1extra', new LOneExtraScene())
         this.add('l1extrabad', new LOneExtraSceneBad())
-        this.goToScene('levelthree')
+        this.goToScene('intro')
 
         this.input.gamepads.enabled = true
         this.input.gamepads.on('connect', (connectevent) => {
