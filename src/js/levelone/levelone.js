@@ -1,4 +1,4 @@
-import { Actor, Scene, Vector, Input, Keys } from "excalibur"
+import { Actor, Scene, Vector, Input, Keys, Sound } from "excalibur"
 import { Resources } from '../resources.js'
 import { Alchemist } from '../alchemist.js'
 import { Letter } from '../letter.js'
@@ -35,7 +35,8 @@ export class LevelOne extends Scene {
         alchemist.pos = new Vector(0, 600)
         alchemist.graphics.use(Resources.Alchemist.toSprite())
         this.add(alchemist)
-        // Resources.LevelOneMusic.play(0.8);
+        Resources.MainThemeMusic.stop();
+        Resources.LevelOneMusic.play(1);
 
         const scenetrans = new SceneTransition()
         scenetrans.pos = new Vector(3840, 450)

@@ -43,6 +43,8 @@ export class LevelFourBad extends Scene {
         ronk.graphics.use(Resources.Ronk.toSprite())
         ronk.pos = new Vector(2350, 360)
         this.add(ronk)
+
+        Resources.LevelFourBadEndingMusic.play(0.8);
     }
     onDeactivate() {
         this.clear()

@@ -42,7 +42,7 @@ export class Intro extends Scene {
         const floor = new Floor()
         floor.pos = new Vector(2000, 890)
         this.add(floor)
-        Resources.MainThemeMusic.play(0.8);
+        Resources.MainThemeMusic.play(0.7);
     
     }
     onDeactivate() {

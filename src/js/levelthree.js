@@ -42,6 +42,8 @@ export class LevelThree extends Scene {
         alchemist.graphics.use(Resources.Alchemist.toSprite())
         alchemist.x = 2560
         this.add(alchemist)
+
+        Resources.LevelTwoMusic.stop();
     }
     onDeactivate() {
         this.clear()
