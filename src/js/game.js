@@ -1,5 +1,5 @@
 import '../css/style.css'
-import { Actor, Engine, Vector, Camera, ScreenElement, DisplayMode, Sound, SolverStrategy } from "excalibur"
+import { Actor, Engine, Vector, Camera, ScreenElement, DisplayMode, Sound, SolverStrategy, Buttons } from "excalibur"
 import { Resources, ResourceLoader } from './resources.js'
 import { Label, FontUnit, Font} from "excalibur";
 import { Alchemist } from './alchemist.js'  
