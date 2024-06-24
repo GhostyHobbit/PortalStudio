@@ -11,6 +11,7 @@ const Resources = {
     LevelOneScreenOne: new ImageSource('images/levelone/sceneone.png'),
     LevelOneSceneTwo: new ImageSource('images/levelone/levelonescenetwo.png'),
     LittleAlien: new ImageSource('images/levelone/littlealien.png'),
+    LittleGuy: new ImageSource('images/levelone/littleman.png'),
     L1Extra: new ImageSource('images/levelone/extrascene.png'),
     L1ExtraBad: new ImageSource('images/levelone/extrascenebad.png'),
     levelTwo: new ImageSource('images/leveltwo/level_2.png'),

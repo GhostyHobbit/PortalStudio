@@ -5,8 +5,13 @@ import { Letter } from '../letter.js'
 import { InvisibleFloor } from '../invisiblefloor.js'
 import { SceneTransition } from "../sceneTransition.js"
 import { Door } from "./door.js"
+import { Dialogue } from "../dialogue.js"
 
 export class LOneSceneTwo extends Scene {
+
+    dialogueText = [
+        'Hello there, mysterious traveler! \nWhat brings you to the Schiecentrale?' 
+    ]
 
     constructor() {
         super()
@@ -16,7 +21,7 @@ export class LOneSceneTwo extends Scene {
 
     }
     onActivate(ctx) {
-        console.log(this.engine)
+        console.log(this.engine.levelOneLetterFound)
         const levelonescreenone = new Actor()
         levelonescreenone.pos = new Vector(1280, 360) // -220
         levelonescreenone.graphics.use(Resources.LevelOneSceneTwo.toSprite())
@@ -31,10 +36,18 @@ export class LOneSceneTwo extends Scene {
         doorone.pos = new Vector(1097,442)
         this.add(doorone)
 
-        const doortwo = new Door()
-        doortwo.graphics.use(Resources.L1Door.toSprite())
-        doortwo.pos = new Vector(2050,445)
-        this.add(doortwo)
+        if (this.engine.levelOneLetterFound == false) {
+            const doortwo = new Door()
+            doortwo.graphics.use(Resources.L1Door.toSprite())
+            doortwo.pos = new Vector(2050,445)
+            this.add(doortwo)
+        }
+
+        const npc = new Letter()
+        npc.pos = new Vector(1380, 487)
+        npc.SpriteActive = false
+        npc.graphics.use(Resources.LittleGuy.toSprite())
+        this.add(npc)
 
         const alchemist = new Alchemist()
         alchemist.pos = new Vector(1170, 600)
