@@ -41,6 +41,7 @@ export class LevelThree extends Scene {
         const invisTrigger = new TriggerBox()
         invisTrigger.pos = new Vector(2100, 550)
         this.add(invisTrigger)
+        Resources.LevelTwoMusic.stop();
     }
     onDeactivate() {
         this.clear()
