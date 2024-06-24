@@ -26,7 +26,7 @@ const Resources = {
     LevelThreeEvil: new ImageSource('images/levelthreemergedlightevil2.png'),
     LevelThreeGood: new ImageSource('images/levelthreemergedlightgood2.png'),
     // music
-    //MainThemeMusic: new Sound('sound/music/CLE_4_Main_Theme.mp3'),
+    MainThemeMusic: new Sound('sound/music/CLE_4_Main_Theme.mp3'),
     //LevelOneMusic: new Sound('sound/music/CLE_4_Level_1.mp3'),
     //LevelTwoMusic: new Sound('sound/music/CLE_4_level_2.mp3'),
     //LevelFourGoodEndingMusic: new Sound('sound/music/CLE_4_Level_4_good_ending.mp3'),
