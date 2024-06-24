@@ -1,4 +1,4 @@
-import { Actor, Engine, Vector, Input, Keys, Camera, ScreenElement, BoundingBox } from "excalibur"
+import { Actor, Engine, Vector, Input, Keys, Camera, ScreenElement, BoundingBox, Buttons } from "excalibur"
 import { Resources, ResourceLoader } from './resources.js'
 import { Alchemist } from "./alchemist.js"
 import { Dialogue } from "./dialogue.js"
@@ -31,7 +31,7 @@ export class TriggerBox extends Actor {
             if (keyCommand) {
                 if (this.existingDialogue === false) {
                     this.existingDialogue = true
-                    this.dialogue.pos = new Vector(this.pos.x, 200)
+                    this.dialogue.pos = new Vector(event.other.pos.x, 550)
                     this.scene.add(this.dialogue)
                     // this.scene.actors[6].dialogueFlow(`I am your Master Alchemist. You, my apprentice, have to find your way through these tests. These are tests of faith, \ncreativity and exploration. Every choice you make will influence your future.`)
                     this.scene.sceneDialogue(0)

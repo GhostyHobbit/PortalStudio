@@ -9,8 +9,7 @@ import { TriggerBox } from "./triggerbox.js"
 export class LevelThree extends Scene {
 
     dialogueText = [
-        'Dear Little Alchemist, I am the Master Alchemist. You may not \nremember me, but I sent you on this mission. You will have to go \nthrough various tests. These will test your faith, creativity and \nexploration.', 
-        'Every choice you make will influence your future. Learn, \nLittle Alchemist, learn and the world will be at your feet. This is a \none way ticket, choose wisely. \n\n-The Master Alchemist', 
+        'After 300 years and 2 apocalyptic events humanity is returning to earth again. After seeing the dangerous but beautifull new ecosystems they are now standing before a choice. Go back to what they know and rebuild from the ruins of the cities that were, or let nature flourish and live in harmony with the world.'
     ]
 
     onActivate(ctx) {
@@ -22,10 +21,6 @@ export class LevelThree extends Scene {
         const floor = new Floor()
         floor.pos = new Vector(2000, 850)
         this.add(floor)
-
-        const invisTrigger = new TriggerBox()
-        invisTrigger.pos = new Vector(2100, 700)
-        this.add(invisTrigger)
 
         const badScene = new TriggerBox()
         badScene.pos = new Vector(1280, 360)
@@ -42,11 +37,15 @@ export class LevelThree extends Scene {
         alchemist.graphics.use(Resources.Alchemist.toSprite())
         alchemist.x = 2560
         this.add(alchemist)
+
+        const invisTrigger = new TriggerBox()
+        invisTrigger.pos = new Vector(2100, 550)
+        this.add(invisTrigger)
     }
     onDeactivate() {
         this.clear()
     }
     sceneDialogue(number) {
-        this.actors[4].dialogueFlow(this.dialogueText[number])
+        this.actors[6].dialogueFlow(this.dialogueText[number])
     }
 }
