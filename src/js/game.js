@@ -18,6 +18,7 @@ import { LevelThree } from './levelthree.js';
 export class Game extends Engine {
 
     mygamepad
+    levelOneLetterFound = false
 
     constructor() {
         super({

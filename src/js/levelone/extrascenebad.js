@@ -9,7 +9,9 @@ import { Door } from "./door.js"
 
 export class LOneExtraSceneBad extends Scene {
 
-    dialogueText = ['cracked', 'chickens', 'definitely', 'say', 'wac']
+    dialogueText = [
+        'Placeholder' 
+    ]
     
     constructor() {
         super()
@@ -19,7 +21,9 @@ export class LOneExtraSceneBad extends Scene {
 
     }
     onActivate(ctx) {
-        console.log(this.engine)
+        this.engine.levelOneLetterFound = true
+        console.log(this.engine.levelOneLetterFound)
+
         const levelonescreenone = new Actor()
         levelonescreenone.pos = new Vector(640, 360)
         levelonescreenone.graphics.use(Resources.L1ExtraBad.toSprite())
@@ -54,9 +58,6 @@ export class LOneExtraSceneBad extends Scene {
     }
 
     sceneDialogue(number) {
-        this.actors[6].dialogueFlow(this.dialogueText[number])
-    }
-    LetterGood(number) {
         this.actors[6].dialogueFlow(this.dialogueText[number])
     }
 
