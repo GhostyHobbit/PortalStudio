@@ -35,6 +35,8 @@ export class LevelFourGood extends Scene {
         alchemist.pos = new Vector(200, 600)
         alchemist.graphics.use(Resources.Alchemist.toSprite())
         this.add(alchemist)
+
+        Resources.LevelFourGoodEndingMusic.play(1);
     }
     onDeactivate() {
         this.clear()
