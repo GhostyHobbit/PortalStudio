@@ -29,8 +29,6 @@ export class Alchemist extends Actor {
         this.scene.camera.strategy.lockToActor(this)
         this.scene.camera.strategy.limitCameraBounds(new BoundingBox(0, 0, this.x, 720))
         this.on('collisionstart', (event) => this.sceneTransition(event))
-
-        console.log(this.scene.engine.mygamepad)
     }
 
     onPreUpdate(engine) {

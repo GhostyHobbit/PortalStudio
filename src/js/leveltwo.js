@@ -11,6 +11,7 @@ export class LevelTwo extends Scene {
     onInitialize(engine) {
 
     }
+
     onActivate(ctx) {
         console.log(this.engine)
         const leveltwoscreen = new Actor()
@@ -30,17 +31,19 @@ export class LevelTwo extends Scene {
         invisfloor.pos = new Vector(1820, 640)
         this.add(invisfloor)
 
-        const inviswall = new InvisibleWall()
-        inviswall.pos = new Vector(2360, 20)
-        this.add(inviswall)
+        // const inviswall = new InvisibleWall()
+        // inviswall.pos = new Vector(1860, 440)
+        // if (this.engine.wallSpawned == true) {
+        //     this.addInvisWall()
+        // }
 
         const inviswalladder = new InvisWallAdder()
-        inviswall.pos = new Vector(1560, 440)
-        //this.add(inviswalladder)
+        inviswalladder.pos = new Vector(1200, 440)
+        this.add(inviswalladder)
 
         const inviswalladder2 = new InvisWallAdder()
-        inviswalladder2.pos = new Vector(1860,440)
-        //this.add(inviswalladder2)
+        inviswalladder2.pos = new Vector(2560,440)
+        this.add(inviswalladder2)
 
         const letter = new Letter()
         letter.pos = new Vector(580, 460)
@@ -59,6 +62,14 @@ export class LevelTwo extends Scene {
         this.clear()
     }
     changeScene() {
-        this.engine.goToScene('intro')
+        this.engine.goToScene('levelthree')
+    }
+    addInvisWall() {
+        if (this.engine.wallSpawned == true) {
+            const inviswall = new InvisibleWall()
+            inviswall.pos = new Vector(1860, 440)
+            this.add(inviswall)
+            this.engine.wallSpawned == false
+        }
     }
 }
