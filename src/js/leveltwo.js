@@ -57,6 +57,9 @@ export class LevelTwo extends Scene {
         alchemist.pos = new Vector(1880, 440)
         alchemist.graphics.use(Resources.Alchemist.toSprite())
         this.add(alchemist)
+
+        Resources.LevelOneMusic.stop();
+        Resources.LevelTwoMusic.play(1);
     }
     onDeactivate() {
         this.clear()

@@ -27,10 +27,10 @@ const Resources = {
     LevelThreeGood: new ImageSource('images/levelthreemergedlightgood2.png'),
     // music
     MainThemeMusic: new Sound('sound/music/CLE_4_Main_Theme.mp3'),
-    //LevelOneMusic: new Sound('sound/music/CLE_4_Level_1.mp3'),
-    //LevelTwoMusic: new Sound('sound/music/CLE_4_level_2.mp3'),
-    //LevelFourGoodEndingMusic: new Sound('sound/music/CLE_4_Level_4_good_ending.mp3'),
-    //LevelFourBadEndingMusic: new Sound('sound/music/CLE_4_Level_4_Bad_ending.mp3'),
+    LevelOneMusic: new Sound('sound/music/CLE_4_Level_1.mp3'),
+    LevelTwoMusic: new Sound('sound/music/CLE_4_Level_2.mp3'),
+    // LevelFourGoodEndingMusic: new Sound('sound/music/CLE_4_Level_4_good_ending.mp3'),
+    // LevelFourBadEndingMusic: new Sound('sound/music/CLE_4_Level_4_Bad_ending.mp3')
     // sfx
     //OpeningLetterSFX: new Sound('sound/sfx/opening_letter.mp3')
 }
