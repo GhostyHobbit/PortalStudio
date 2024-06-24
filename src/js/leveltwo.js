@@ -4,7 +4,7 @@ import { Alchemist } from './alchemist.js'
 import { Letter } from './letter.js'
 import { InvisibleFloor } from './invisiblefloor.js'
 import { InvisibleWall } from "./invisiblewall.js"
-import { Door } from './levelone/door.js'
+import { InvisWallAdder } from "./inviswalladder.js"
 import { SceneTransition } from "./sceneTransition.js"
 
 export class LevelTwo extends Scene {
@@ -31,8 +31,16 @@ export class LevelTwo extends Scene {
         this.add(invisfloor)
 
         const inviswall = new InvisibleWall()
-        inviswall.pos = new Vector(1860, /*440*/40)
+        inviswall.pos = new Vector(2360, 20)
         this.add(inviswall)
+
+        const inviswalladder = new InvisWallAdder()
+        inviswall.pos = new Vector(1560, 440)
+        //this.add(inviswalladder)
+
+        const inviswalladder2 = new InvisWallAdder()
+        inviswalladder2.pos = new Vector(1860,440)
+        //this.add(inviswalladder2)
 
         const letter = new Letter()
         letter.pos = new Vector(580, 460)
@@ -43,7 +51,7 @@ export class LevelTwo extends Scene {
         this.add(letter2)
 
         const alchemist = new Alchemist()
-        alchemist.pos = new Vector(2100, 440)
+        alchemist.pos = new Vector(1880, 440)
         alchemist.graphics.use(Resources.Alchemist.toSprite())
         this.add(alchemist)
     }
