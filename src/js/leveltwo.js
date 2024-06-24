@@ -43,7 +43,7 @@ export class LevelTwo extends Scene {
         this.add(letter2)
 
         const alchemist = new Alchemist()
-        alchemist.pos = new Vector(2100, 440)
+        alchemist.pos = new Vector(1880, 440)
         alchemist.graphics.use(Resources.Alchemist.toSprite())
         this.add(alchemist)
     }
