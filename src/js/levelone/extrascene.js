@@ -10,7 +10,8 @@ import { Door } from "./door.js"
 export class LOneExtraScene extends Scene {
 
     dialogueText = [
-        'Placeholder' 
+        'Look around you. Being an alchemist is all about creation, this \nplace is a good way to show you that. We use nature’s resources \nto help, to heal, to create. As long as we respect it and only use \nits gifts sparingly we can call ourselves alchemists.',
+        'Take this place as an example, Little Alchemist, humans used it \nbare. Now they aren’t inflicting pain onto nature anymore and \nthis place can be reclaimed.' 
     ]
     
     constructor() {
@@ -36,17 +37,17 @@ export class LOneExtraScene extends Scene {
         doortwo.pos = new Vector(457,440)
         this.add(doortwo)
 
+        const letter = new Letter()
+        letter.pos = new Vector(790 ,530)
+        letter.SpriteActive = false
+        this.add(letter)
+
         const alchemist = new Alchemist()
         alchemist.pos = new Vector(530, 600)
         alchemist.x = 1280
         alchemist.graphics.use(Resources.Alchemist.toSprite())
         this.add(alchemist)
         // Resources.LevelOneMusic.play(0.8);
-
-        const letter = new Letter()
-        letter.pos = new Vector(790 ,530)
-        letter.SpriteActive = false
-        this.add(letter)
     }
     onDeactivate() {
         this.clear()
@@ -55,9 +56,10 @@ export class LOneExtraScene extends Scene {
     changeRoom() {
         this.engine.goToScene('l1scenetwo')
     }
-
+    // good letter dialogue
     sceneDialogue(number) {
-        this.actors[6].dialogueFlow(this.dialogueText[number])
+
+        this.actors[5].dialogueFlow(this.dialogueText[number])
     }
 
 }

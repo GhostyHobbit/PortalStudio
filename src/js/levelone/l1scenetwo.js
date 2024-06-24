@@ -10,7 +10,8 @@ import { Dialogue } from "../dialogue.js"
 export class LOneSceneTwo extends Scene {
 
     dialogueText = [
-        'Hello there, mysterious traveler! \nWhat brings you to the Schiecentrale?' 
+        'Hello there, mysterious traveler! What brings you to the \nSchiecentrale? Oh? You’re trying to find your way home, I see. I wish \nyou luck on your journey, however it may go.',
+        'Beware that any innocent looking step could change your path. \nThis world is full of mystery that I don’t have the answers to either, \nbut I hope we will both find the right path.' 
     ]
 
     constructor() {
@@ -70,5 +71,15 @@ export class LOneSceneTwo extends Scene {
 
     changeScene() {
         this.engine.goToScene('leveltwo')
+    }
+    // npc dialogue
+    sceneDialogue(number) {
+        if (this.engine.levelOneLetterFound == false) { 
+            this.actors[7].dialogueFlow(this.dialogueText[number])
+        } else {
+            console.log(this.actors)
+            this.actors[6].dialogueFlow(this.dialogueText[number])
+        }
+        
     }
 }
