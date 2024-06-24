@@ -52,9 +52,9 @@ export class Intro extends Scene {
         this.engine.goToScene('levelone')
     }
     sceneDialogue(number) {
-        this.actors[6].dialogueFlow(this.dialogueText[number])
+        this.actors[5].dialogueFlow(this.dialogueText[number])
     }
-    LetterGood(number) {
-        this.actors[6].dialogueFlow(this.dialogueText[number])
-    }
+    // LetterGood(number) {
+    //     this.actors[6].dialogueFlow(this.dialogueText[number])
+    // }
 }
