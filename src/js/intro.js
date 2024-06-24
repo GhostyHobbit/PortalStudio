@@ -42,8 +42,8 @@ export class Intro extends Scene {
         const floor = new Floor()
         floor.pos = new Vector(2000, 890)
         this.add(floor)
-
-        // Resources.MainThemeMusic.play(0.8);
+        Resources.MainThemeMusic.play(0.8);
+    
     }
     onDeactivate() {
         this.clear()
@@ -52,9 +52,9 @@ export class Intro extends Scene {
         this.engine.goToScene('levelone')
     }
     sceneDialogue(number) {
-        this.actors[6].dialogueFlow(this.dialogueText[number])
+        this.actors[5].dialogueFlow(this.dialogueText[number])
     }
-    LetterGood(number) {
-        this.actors[6].dialogueFlow(this.dialogueText[number])
-    }
+    // LetterGood(number) {
+    //     this.actors[6].dialogueFlow(this.dialogueText[number])
+    // }
 }

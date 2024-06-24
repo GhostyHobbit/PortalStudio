@@ -1,4 +1,4 @@
-import { Engine, Actor, Vector, CollisionType, Keys } from "excalibur";
+import { Engine, Actor, Vector, CollisionType, Keys, Buttons } from "excalibur";
 import { Resources } from '../resources';
 import { Alchemist } from "../alchemist";
 
@@ -19,7 +19,7 @@ export class Door extends Actor {
 
   opendoor(event){
     if (event.other instanceof Alchemist) {
-        if (this.scene.engine.input.keyboard.wasPressed(Keys.E)) {
+        if (this.scene.engine.input.keyboard.wasPressed(Keys.E) || this.scene.engine.mygamepad.wasButtonReleased(Buttons.Face1)) {
             this.scene.changeRoom()
             }
         }

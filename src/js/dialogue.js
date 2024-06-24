@@ -12,7 +12,7 @@ export class Dialogue extends Actor {
         pos: new Vector (-550, -100),
         width: 1000,
         font: new Font({
-            family: 'comic sans',
+            family: 'copperplate gothic',
             size: 30,
             unit: FontUnit.Px
         })
@@ -35,4 +35,7 @@ export class Dialogue extends Actor {
      dialogueFlow(text) {
         this.label.text = text
      }
+    //  cinemaDialogue(text) {
+    //     this.label.text = text
+    //  }
 }
