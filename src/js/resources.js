@@ -24,7 +24,7 @@ const Resources = {
     Floor: new ImageSource('images/floorbar.png'),
     LevelThree: new ImageSource('images/levelthree.png'),
     // music
-    //MainThemeMusic: new Sound('sound/music/CLE_4_Main_Theme.mp3'),
+    MainThemeMusic: new Sound('sound/music/CLE_4_Main_Theme.mp3'),
     //LevelOneMusic: new Sound('sound/music/CLE_4_Level_1.mp3'),
     //LevelTwoMusic: new Sound('sound/music/CLE_4_level_2.mp3'),
     //LevelFourGoodEndingMusic: new Sound('sound/music/CLE_4_Level_4_good_ending.mp3'),
