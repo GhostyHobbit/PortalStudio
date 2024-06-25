@@ -5,6 +5,7 @@ import { SceneTransition } from "./sceneTransition.js"
 import { Dialogue } from "./dialogue.js"
 import { Letter } from "./letter.js"
 import { masterAlchemist } from "./masteralchemist.js"
+import { TriggerBox, sceneBox } from "./triggerbox.js"
 
 export class Alchemist extends Actor {
 
@@ -22,6 +23,7 @@ export class Alchemist extends Actor {
     }
 
     onInitialize(engine) {
+        // console.log(this.scene.actors[3].graphics)
         this.game = engine
 
         this.on('precollision', (event) => this.interact(event))
@@ -85,8 +87,25 @@ export class Alchemist extends Actor {
                     }
                 }
             }
+        } else if (event.other instanceof sceneBox && this.scene.actors.length < 6) {
+            let keyCommand
+            if (this.scene.engine.mygamepad) {
+                keyCommand = this.scene.engine.mygamepad.wasButtonReleased(Buttons.Face1)
+            } else if (!this.scene.engine.mygamepad) {
+                keyCommand = this.game.input.keyboard.wasPressed(Input.Keys.E)
+            }
+             if(keyCommand) {
+                console.log(event.other)
+                    if (event.other.pos.x === 1758) {
+                        console.log('wac')
+                        this.scene.changeScene()
+                    } else {
+                        console.log('weeee')
+                        this.scene.changeSceneGood()
+                    }
+                }
+            }
         }
-    }
 
     controllerInteract(event) {
         if (this.existingDialogue === false) {

@@ -1,4 +1,4 @@
-import { Actor, Engine, Vector, Input, Keys, Camera, ScreenElement, BoundingBox, Buttons } from "excalibur"
+import { Actor, Engine, Vector, Input, Keys, Camera, ScreenElement, BoundingBox, Buttons, Shape } from "excalibur"
 import { Resources, ResourceLoader } from './resources.js'
 import { Alchemist } from "./alchemist.js"
 import { Dialogue } from "./dialogue.js"
@@ -39,17 +39,28 @@ export class TriggerBox extends Actor {
                     this.dialogueCount++
                     if (this.dialogueCount >= this.scene.dialogueText.length) {
                         this.scene.actors[this.scene.actors.length - 2].kill()
-                        this.existingDialogue = false
-                        this.dialogueCount = 0
+                        this.scene.actors[5].kill()
                     } else {
                         //you can reuse this in every scene to run dialogue
                         //for questions --> ask Lucas
                         this.scene.sceneDialogue(this.dialogueCount)
-                        //this.scene.letterGood(this.dialogueCount)
-                        //this.scene.letterBad(this.dialogueCount)
                     }
                 }
             }
         }
+    }
+}
+
+export class sceneBox extends TriggerBox {
+    box 
+
+    onInitialize() {
+        this.box = Shape.Box(400, 400) 
+        this.collider.set(this.box)
+        this.on('precollision', (event) => this.sceneChange())
+    }
+
+    sceneChange() {
+
     }
 }

@@ -44,7 +44,7 @@ export class Game extends Engine {
         this.add('l1scenetwo', new LOneSceneTwo())
         this.add('l1extra', new LOneExtraScene())
         this.add('l1extrabad', new LOneExtraSceneBad())
-        this.goToScene('leveltwo')
+        this.goToScene('intro')
 
         this.input.gamepads.enabled = true
         this.input.gamepads.on('connect', (connectevent) => {
